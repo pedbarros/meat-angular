@@ -1,3 +1,4 @@
+import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
@@ -29,7 +30,8 @@ import { AboutComponent } from './about/about.component';
     MenuComponent,
     ShoppingCartComponent,
     MenuItemComponent,
-    RestaurantDetailComponent
+    RestaurantDetailComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,

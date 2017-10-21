@@ -2,7 +2,7 @@
   "restaurants": [
     {
       "id": "bread-bakery",
-      "name": "Bread & Bakery",
+      "name": "Pedro Boleiragem",
       "category": "Bakery",
       "deliveryEstimate": "25m",
       "rating": 4.9,
@@ -209,9 +209,9 @@
   ],
   "reviews": [
     {
-      "name": "Julia",
-      "date": "2017-01-23T18:25:43",
-      "rating": 4.5,
+      "name": "Pedro Barros",
+      "date": "2017-10-21T18:25:43",
+      "rating": 5.0,
       "comments": "Tudo muito bom, entrega no tempo certo",
       "restaurantId": "bread-bakery"
     },
