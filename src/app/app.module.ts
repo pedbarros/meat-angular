@@ -1,4 +1,9 @@
-import { RestaurantsService } from './restaurants/restaurant/restaurants.service';
+import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
+import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
+import { MenuComponent } from './restaurant-detail/menu/menu.component';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
+import { RestaurantsService } from './restaurants/restaurants.service';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 import { routes } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,7 +16,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { RestaurantsComponent } from './restaurants/restaurants.component';
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
     HomeComponent,
     AboutComponent,
     RestaurantsComponent,
-    RestaurantComponent
+    RestaurantComponent,
+    MenuComponent,
+    ShoppingCartComponent,
+    MenuItemComponent,
+    RestaurantDetailComponent
   ],
   imports: [
     BrowserModule,

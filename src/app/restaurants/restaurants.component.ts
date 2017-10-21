@@ -1,4 +1,4 @@
-import { RestaurantsService } from './restaurant/restaurants.service';
+import { RestaurantsService } from './restaurants.service';
 import { Restaurant } from './restaurant/restaurant.model';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class RestaurantsComponent implements OnInit {
 
   restaurants: Restaurant[]
+
   constructor(private restarauntService: RestaurantsService) { }
 
   // chamado uma vez no ciclo: sempre que o component entrar na tela esse metodo é acionado
