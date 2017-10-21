@@ -13,7 +13,8 @@ export class RestaurantsComponent implements OnInit {
 
   // chamado uma vez no ciclo: sempre que o component entrar na tela esse metodo é acionado
   ngOnInit() {
-    this.restaurants = this.restarauntService.restaurants();
+    this.restarauntService.restaurants()
+      .subscribe( restaurants => this.restaurants = restaurants);
   }
 
 }
