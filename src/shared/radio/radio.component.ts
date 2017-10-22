@@ -32,22 +32,22 @@ export class RadioComponent implements OnInit, ControlValueAccessor {
   }
 
   /**
-   * Write a new value to the element.
+   * Método utilizando quando alguma diretiva quer passar algum valor para o componente
    */
   writeValue(obj: any): void{
     this.value = obj
   }
   /**
-   * Set the function to be called when the control receives a change event.
+   * Método que passa uma função sempre que o valor interno do component mudar
    */
   registerOnChange(fn: any): void{
     this.OnChange = fn
   }
   /**
-   * Set the function to be called when the control receives a touch event.
+   * Registra quando o usuário entrou no componenet
    */
   registerOnTouched(fn: any): void{
-
+      // console.log('usuário entrou no componenet');
   }
   /**
    * This function is called when the control status changes to or from "DISABLED".
@@ -56,7 +56,7 @@ export class RadioComponent implements OnInit, ControlValueAccessor {
    * @param isDisabled
    */
   setDisabledState?(isDisabled: boolean): void{
-
+    console.log(isDisabled)
   }
 
 }
