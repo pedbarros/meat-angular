@@ -9,8 +9,8 @@ export class ShoppingCartService{
   }
 
   addItem(item: MenuItem){
-    console.log(item)
     let foundItem = this.items.find( (mItem) => mItem.menuItem.id === item.id )
+    console.log(foundItem)
     if (foundItem){
       foundItem.quantity = foundItem.quantity + 1
     }else{
@@ -24,8 +24,8 @@ export class ShoppingCartService{
 
   total(): number{
     return this.items
-      .map( item => item.value())
-      .reduce( (prev, value) =>  prev + value, 0)
+    .map( item => item.value()  )
+    .reduce( (valorTotalAnterior, valorAtual) => valorTotalAnterior + valorAtual, 0)
   }
 
 
