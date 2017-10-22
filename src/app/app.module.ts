@@ -1,5 +1,6 @@
+import { InputComponent } from './../shared/input/input.component';
+import { OrderComponent } from './order/order.component';
 import { FormsModule } from '@angular/forms';
-import { OrderComponent } from './restaurant-detail/order/order.component';
 import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
@@ -35,7 +36,8 @@ import { AboutComponent } from './about/about.component';
     MenuItemComponent,
     RestaurantDetailComponent,
     ReviewsComponent,
-    OrderComponent
+    OrderComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
