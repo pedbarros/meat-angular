@@ -1,3 +1,4 @@
+import { RadioComponent } from './../shared/radio/radio.component';
 import { InputComponent } from './../shared/input/input.component';
 import { OrderComponent } from './order/order.component';
 import { FormsModule } from '@angular/forms';
@@ -37,7 +38,8 @@ import { AboutComponent } from './about/about.component';
     RestaurantDetailComponent,
     ReviewsComponent,
     OrderComponent,
-    InputComponent
+    InputComponent,
+    RadioComponent
   ],
   imports: [
     BrowserModule,
