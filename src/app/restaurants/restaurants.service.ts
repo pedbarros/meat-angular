@@ -1,3 +1,4 @@
+import { MenuItem } from './../restaurant-detail/menu-item/menu-item.model';
 import { API } from './../app.api';
 import { ErroHandler } from './../app.error-handler';
 import { Restaurant } from './restaurant/restaurant.model';
@@ -31,5 +32,11 @@ export class RestaurantsService{
       return this.http.get(`${API}/restaurants/${id}/reviews`)
       .map(res => res.json())
       .catch(ErroHandler.handleError)
+  }
+
+  menuOfRestaurant(id: string): Observable<MenuItem[]>{
+    return this.http.get(`${API}/restaurants/${id}/menu`)
+    .map(res => res.json())
+    .catch(ErroHandler.handleError)
   }
 }
