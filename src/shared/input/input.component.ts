@@ -1,4 +1,4 @@
-import { NgModel } from '@angular/forms';
+import { NgModel, FormControlName } from '@angular/forms';
 import { AfterContentInit, Component, ContentChild, Input, OnInit } from '@angular/core';
 
 
@@ -14,18 +14,17 @@ export class InputComponent implements OnInit, AfterContentInit {
   input: any;
 
   @ContentChild(NgModel) model: NgModel
+  @ContentChild (FormControlName) control: FormControlName
 
   constructor() { }
 
-  ngOnInit(){
-
-  }
+  ngOnInit(){}
 
   ngAfterContentInit(){
-    this.input = this.model
+    this.input = this.model || this.control //se ngmodel n tiver disponivel vai tentar o control
     console.log(this.input)
     if ( this.input === undefined ){
-      throw new Error('Esse compoenent precisa ser usado com uma diretiva ngModel')
+      throw new Error('Esse compoenent precisa ser usado com uma diretiva ngModel ou FormControlName')
     }
   }
 
