@@ -2,6 +2,7 @@ import { DeliveryCostsComponent } from './order/delivery-costs/delivery-costs.co
 import { OrderService } from './order/order.service';
 import { RadioComponent } from './../shared/radio/radio.component';
 import { InputComponent } from './../shared/input/input.component';
+import { RatingComponent } from './../shared/rating/rating.component';
 import { OrderComponent } from './order/order.component';
 import { FormsModule } from '@angular/forms';
 import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
@@ -25,6 +26,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { OrderItemComponent } from './order/order-item/order-item.component';
+import { OrderSummaryComponent } from './order/order-summary/order-summary.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { OrderItemComponent } from './order/order-item/order-item.component';
     OrderItemComponent,
     InputComponent,
     RadioComponent,
-    DeliveryCostsComponent
+    DeliveryCostsComponent,
+    OrderSummaryComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,

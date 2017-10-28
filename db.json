@@ -211,7 +211,7 @@
     {
       "name": "Pedro Barros",
       "date": "2017-10-21T18:25:43",
-      "rating": 5.0,
+      "rating": 5,
       "comments": "Tudo muito bom, entrega no tempo certo",
       "restaurantId": "bread-bakery"
     },
@@ -370,5 +370,87 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "Av. Menino Marcelo",
+      "number": "5935",
+      "optionalAddress": "Res. Mata Atlântica Bl 04 Apt 107",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 3,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "Av. Teste",
+      "number": "123",
+      "optionalAddress": "Comp Teste",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "burger"
+        },
+        {
+          "quantity": 1,
+          "menuId": "fries"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "11111111",
+      "number": "1111111111111111",
+      "optionalAddress": "11111111111111111",
+      "paymentOption": "TIC",
+      "orderItems": [
+        {
+          "quantity": 5,
+          "menuId": "capp"
+        },
+        {
+          "quantity": 1,
+          "menuId": "espreso"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "address": "111111",
+      "number": "1111111111111111",
+      "optionalAddress": "1111111",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "address": "1111111",
+      "number": "1",
+      "optionalAddress": "11111111",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        }
+      ],
+      "id": 5
+    }
+  ]
 }
