@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RadioComponent } from './radio/radio.component';
 import { RatingComponent } from './rating/rating.component';
 import { InputComponent } from './input/input.component';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 
 @NgModule({
   declarations:[InputComponent, RadioComponent, RatingComponent],
@@ -14,5 +14,10 @@ import { NgModule } from '@angular/core';
 
 })
 export class SharedModule{
-
+  static forRoot(): ModuleWithProviders{
+    return {
+      ngModule: SharedModule,
+      providers: []
+    }
+  }
 }
