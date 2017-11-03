@@ -1,5 +1,5 @@
-import { CoreModule } from './core/core.module';
-import { SharedModule } from './../shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
@@ -11,7 +11,7 @@ import { routes } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -35,10 +35,10 @@ import { OrderSummaryComponent } from './order/order-summary/order-summary.compo
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpModule,
-    SharedModule,
-    CoreModule,
-    RouterModule.forRoot(routes)
+    SharedModule.forRoot(), //components do shared mais providers
+    RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
