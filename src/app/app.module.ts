@@ -1,3 +1,4 @@
+import { HashLocationStrategy, LocationStrategy } from '@angular/common/';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { OrderSummaryComponent } from './order/order-summary/order-summary.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { OrderSummaryComponent } from './order/order-summary/order-summary.compo
     ShoppingCartComponent,
     MenuItemComponent,
     ReviewsComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ import { OrderSummaryComponent } from './order/order-summary/order-summary.compo
     SharedModule.forRoot(), //components do shared mais providers
     RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, { provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
