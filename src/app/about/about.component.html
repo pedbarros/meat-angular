@@ -4,6 +4,8 @@
 </section>
 
 <section class="content">
+    <input type="text" #iptSearch placeholder="Digite aqui a busca">
+    <button (click)="buscarPaciente(iptSearch.value)">Buscar Paciente</button>
     <p class="lead">
       Meat | Aplicação que demonstra as features do Angular
     </p>

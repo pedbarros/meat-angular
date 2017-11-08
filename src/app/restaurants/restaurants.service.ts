@@ -8,35 +8,32 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable() //utilizado quando a classe irá receber um outro serviço por injeção de dependencia
 export class RestaurantsService{
 
-  constructor(private http: Http){}
+  constructor(private http: HttpClient){}
 
   restaurants(search?: string): Observable<Restaurant[]>{
+    let params: HttpParams = undefined
+    if (search){
+      params = new HttpParams().append('q', search)
+    }
+
     return this.http
-           .get(`${API}/restaurants`, {params: { q: search }})
-           .map(res => res.json())
-           .catch(ErroHandler.handleError)
+           .get<Restaurant[]>(`${API}/restaurants`, {params: params})
   }
 
   restaurantById(id: string): Observable<Restaurant>{
-    return this.http.get(`${API}/restaurants/${id}`)
-           .map(res => res.json())
-           .catch(ErroHandler.handleError)
+    return this.http.get<Restaurant>(`${API}/restaurants/${id}`)
   }
 
   reviewsOfRestaurant(id: string): Observable<any>{
       return this.http.get(`${API}/restaurants/${id}/reviews`)
-      .map(res => res.json())
-      .catch(ErroHandler.handleError)
   }
 
   menuOfRestaurant(id: string): Observable<MenuItem[]>{
-    return this.http.get(`${API}/restaurants/${id}/menu`)
-    .map(res => res.json())
-    .catch(ErroHandler.handleError)
+    return this.http.get<MenuItem[]>(`${API}/restaurants/${id}/menu`)
   }
 }
