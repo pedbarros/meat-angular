@@ -1,3 +1,4 @@
+//import { LoginService } from './../security/login/login.service';
 import { Observable } from 'rxjs/Rx';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { RestaurantsService } from './restaurants.service';
@@ -40,10 +41,12 @@ export class RestaurantsComponent implements OnInit {
   searchControl: FormControl
 
   constructor(private restarauntService: RestaurantsService,
+              //private loginService: LoginService,
               private fb: FormBuilder) { }
 
   // chamado uma vez no ciclo: sempre que o component entrar na tela esse metodo é acionado
   ngOnInit() {
+    //console.log( this.loginService.returnUser() )
 
      this.searchControl = this.fb.control('')
 

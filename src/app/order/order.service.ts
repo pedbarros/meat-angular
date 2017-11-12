@@ -1,6 +1,7 @@
+import { LoginService } from './../security/login/login.service';
 
 import { API } from './../app.api';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { Order, OrderItem } from './order.model';
@@ -10,7 +11,9 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class OrderService {
-  constructor(private http: HttpClient, private cartService: ShoppingCartService){
+  constructor(private http: HttpClient,
+              private cartService: ShoppingCartService,
+              private loginService: LoginService){
 
   }
 
@@ -39,7 +42,11 @@ export class OrderService {
   }
 
   checkOrders(order: Order): Observable<string>{
-    return this.http.post<Order>(`${API}/orders`, order)
+    let headers = new HttpHeaders()
+    if (this.loginService.isLoggedIn()){
+      headers = headers.set('Authorization', `Bearer ${this.loginService.user.accessToken}`)
+    }
+    return this.http.post<Order>(`${API}/orders`, order, {headers: headers})
                           .map( order => order.id)
   }
 }

@@ -8,7 +8,7 @@
       true,
       "check-space"
     ],
-    "curly": true,
+    //"curly": true,
     "eofline": true,
     "forin": true,
     "indent": [
@@ -58,17 +58,17 @@
       true,
       "check-open-brace",
       "check-catch",
-      "check-else",
-      "check-whitespace"
+      "check-else"/*,
+      "check-whitespace"*/
     ],
     "quotemark": [
       true,
       "single"
     ],
     "radix": true,
-    "semicolon": [
+    /*"semicolon": [
       "always"
-    ],
+    ],*/
     "triple-equals": [
       true,
       "allow-null-check"
