@@ -57,7 +57,7 @@ export class RestaurantsComponent implements OnInit {
      this.searchControl.valueChanges
          .debounceTime(500) // espera 500ms entre dois eventos
          .distinctUntilChanged() //emite somente eventos unicos (se emitirem dois eventos iguais ele ignora um)
-         .do( searchTerm =>  console.log(searchTerm) )
+         //.do( searchTerm =>  console.log(searchTerm) )
          .switchMap( searchTerm =>
             this.restarauntService
               .restaurants(searchTerm)

@@ -1,3 +1,4 @@
+import { LeaveOrderGuard } from './../order/leave-order.guard';
 import { LoggedInGuard } from './../security/loggedin.guard';
 import { LoginService } from './../security/login/login.service';
 import { NotificationService } from './message/notification.service';
@@ -27,7 +28,7 @@ export class SharedModule{
       ngModule: SharedModule,
       providers:  [ShoppingCartService, OrderService,
                    RestaurantsService, NotificationService,
-                   LoginService, LoggedInGuard]
+                   LoginService, LoggedInGuard, LeaveOrderGuard]
     }
   }
 }

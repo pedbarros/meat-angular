@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       email: this.fb.control('', [Validators.required, Validators.email]),
       password: this.fb.control('', [Validators.required])
     })
-    this.navigateTo = this.activatedRouter.snapshot.params['to'] || '/' //caso não exista nenhuma rota irá ser redirecionado para página de login
+    this.navigateTo = this.activatedRouter.snapshot.params['to'] || btoa('/') //caso não exista nenhuma rota irá ser redirecionado para página de login
   }
 
   login(){
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
                                  response => //HTTPErrorResponse
                                     this.notificationService.notify(response.error.message),
                                  () => {
-                                    this.router.navigate([this.navigateTo])
+                                    this.router.navigate([atob(this.navigateTo) ])
                                  })
   }
 

@@ -4,7 +4,7 @@ import { state, style, trigger, transition, animate } from '@angular/animations'
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/observable/timer'
 import 'rxjs/add/operator/do'
-import 'rxjs/add/operator/switchmap'
+import 'rxjs/add/operator/switchMap'
 @Component({
   selector: 'mt-snackbar',
   templateUrl: './snackbar.component.html',
